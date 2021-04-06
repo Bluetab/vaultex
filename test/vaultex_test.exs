@@ -139,6 +139,14 @@ defmodule VaultexTest do
                                                                                               "data" => %{"value" => "bar"}}}
   end
 
+  test "Read of valid secret with empty warnings" do
+    assert Vaultex.Client.read("secret/empty_warning", :app_id, {"good", "whatever"}) == {:ok, %{"value" => "empty_warning"}}
+  end
+
+  test "Read of valid secret with empty errors" do
+    assert Vaultex.Client.read("secret/empty_error", :app_id, {"good", "whatever"}) == {:ok, %{"value" => "empty_error"}}
+  end
+
   test "Read of non existing secret key returns error" do
     assert Vaultex.Client.read("secret/baz", :app_id, {"good", "whatever"}) == {:error, ["Key not found"]}
   end

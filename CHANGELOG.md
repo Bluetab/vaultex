@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0
+* Adds HTML doc generation function, cleans up project config, and improves README. Updates ex_doc to version 0.22 which requires elixir 1.7+.
+
+## 0.12.5
+* When reading from Vault, do not allow a nil errors or warnings value to hijack the response
+
+## 0.12.4
+* Updating ex_doc dependency to enable mix docs and in turn, mix hex.publish
+
+## 0.12.3
+* poison should be listed as runtime dependency
+
 ## 0.12.2
 * Ensure warnings are exposed in the response
 
